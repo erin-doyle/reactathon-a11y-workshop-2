@@ -60,37 +60,39 @@ class MovieWishlist extends Component {
 
         return (
             <div>
-                <div className="navbar navbar-dark bg-primary">
+                <header className="navbar navbar-dark bg-primary">
                     <span className="navbar-text">
-                        Movie Wishlist
+                        <h1>Movie Wishlist</h1>
                     </span>
                     <button className="btn btn-outline-secondary" onClick={goToBrowse}>Add</button>
-                </div>
+                </header>
 
-                <ul className="nav nav-pills nav-justified">
-                    <li className="nav-item">
-                        <NavLink to="/wishlist/unwatched" className="nav-link" activeClassName="active">Unwatched</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/wishlist/watched" className="nav-link" activeClassName="active">Watched</NavLink>
-                    </li>
-                </ul>
+                <main>
+                    <ul className="nav nav-pills nav-justified">
+                        <li className="nav-item">
+                            <NavLink to="/wishlist/unwatched" className="nav-link" activeClassName="active">Unwatched</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to="/wishlist/watched" className="nav-link" activeClassName="active">Watched</NavLink>
+                        </li>
+                    </ul>
 
-                {Object.keys(wishlist).length
-                    ? <div>
-                        <WishList
-                            movieList={wishlist}
-                            watched={match.params.status === 'watched'}
-                            movieActions={movieActions}
-                        />
-                    </div>
-                    : <p>No Movies in your Wish List! <Link to="/browse">Add some</Link>!</p>
-                }
+                    {Object.keys(wishlist).length
+                        ? <div>
+                            <WishList
+                                movieList={wishlist}
+                                watched={match.params.status === 'watched'}
+                                movieActions={movieActions}
+                            />
+                        </div>
+                        : <p>No Movies in your Wish List! <Link to="/browse">Add some</Link>!</p>
+                    }
 
-                { showEditor
-                    ? <MovieEditor movie={movieInEditing} updateMovie={this.handleUpdateMovie} />
-                    : null
-                }
+                    { showEditor
+                        ? <MovieEditor movie={movieInEditing} updateMovie={this.handleUpdateMovie} />
+                        : null
+                    }
+                </main>
             </div>
         );
     }
