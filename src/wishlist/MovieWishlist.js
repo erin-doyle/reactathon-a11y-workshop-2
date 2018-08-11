@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom';
 
+import Header from '../primitives/Header';
+
 import WishList from './WishList';
 import getWishlistActions from './getWishlistActions';
 import MovieEditor from './MovieEditor';
@@ -60,12 +62,7 @@ class MovieWishlist extends Component {
 
         return (
             <div>
-                <header className="navbar navbar-dark bg-primary">
-                    <span className="navbar-text">
-                        <h1>Movie Wishlist</h1>
-                    </span>
-                    <button className="btn btn-outline-secondary" onClick={goToBrowse}>Add</button>
-                </header>
+                <Header title="Movie Wishlist" buttonText="Add" handleButtonClick={goToBrowse} />
 
                 <main>
                     <ul className="nav nav-pills nav-justified">
