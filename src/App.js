@@ -79,6 +79,7 @@ class App extends Component {
 
         if (!(movieId in wishlist)) return;
 
+        // eslint-disable-next-line no-unused-vars
         const { [movieId]: omitMovie, ...updatedWishlist } = wishlist;
 
         this.setState({

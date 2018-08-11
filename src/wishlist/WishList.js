@@ -5,6 +5,7 @@ import Movie from '../primitives/Movie';
 
 
 const WishList = ({ movieList, watched, movieActions }) => {
+    // eslint-disable-next-line no-unused-vars
     const isWatched = ([ movieId, movie ]) => movie.watched === watched;
 
     return Object.entries(movieList)

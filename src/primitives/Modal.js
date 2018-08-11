@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 
 const modalRoot = document.getElementById('modal-root');
@@ -30,6 +31,10 @@ class Modal extends Component {
         );
     }
 }
+
+Modal.propTypes = {
+    children: PropTypes.node.isRequired
+};
 
 
 export default Modal;
