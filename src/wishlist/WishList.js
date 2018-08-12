@@ -11,7 +11,7 @@ const WishList = ({ movieList, watched, movieActions }) => {
     return Object.entries(movieList)
         .filter(isWatched)
         .map(([ movieId, movie ]) =>
-                <Movie key={movieId} movieId={movieId} movie={movie} movieActions={movieActions(movieId, movie.watched)}/>
+                <Movie key={movieId} movieId={movieId} movie={movie} movieActions={movieActions(movieId, movie.name, movie.watched)}/>
         );
 };
 
