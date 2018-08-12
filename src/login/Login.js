@@ -19,13 +19,26 @@ const Login = ({ history }) => {
                             </div>
                             <div className="card-body">
                                 <div className="form-group">
-                                    <label>Username</label>
-                                    <input type="text" name="username" className="form-control" placeholder="Enter username" />
+                                    <label htmlFor="username">Username
+                                        <input
+                                            id="username"
+                                            type="text"
+                                            name="username"
+                                            className="form-control"
+                                        />
+                                    </label>
                                 </div>
                                 <div className="form-group">
-                                    <label>Password</label>
-                                    <input type="password" name="password" className="form-control" placeholder="Password" />
-                                    <small className="form-text text-muted">Passwords are case sensitive</small>
+                                    <label htmlFor="password">Password
+                                        <input
+                                            id="password"
+                                            type="password"
+                                            name="password"
+                                            className="form-control"
+                                            aria-describedby="passwordDesc"
+                                        />
+                                    </label>
+                                    <small id="passwordDesc" className="form-text text-muted">Passwords are case sensitive</small>
                                 </div>
                                 <button type="button" className="btn btn-primary" onClick={goToWishlist}>Login</button>
                             </div>
