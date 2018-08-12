@@ -82,7 +82,11 @@ class MovieWishlist extends Component {
                                 movieActions={movieActions}
                             />
                         </div>
-                        : <p>No Movies in your Wish List! <Link to="/browse">Add some</Link>!</p>
+                        : <div aria-labelledby="noMoviesText addLink">
+                            <span id="noMoviesText">
+                                No Movies in your Wish List! <Link id="addLink" to="/browse">Add some Movies!</Link>
+                            </span>
+                        </div>
                     }
 
                     { showEditor
