@@ -62,7 +62,7 @@ class MovieWishlist extends Component {
 
         return (
             <div>
-                <Header title="Movie Wishlist" buttonText="Add" handleButtonClick={goToBrowse} />
+                <Header title="Movie Wishlist" buttonText="+" handleButtonClick={goToBrowse} />
 
                 <main>
                     <ul className="nav nav-pills nav-justified">
