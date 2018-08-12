@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FormInput from '../primitives/FormInput';
 
 
 const Login = ({ history }) => {
@@ -18,28 +19,21 @@ const Login = ({ history }) => {
                                 <h2>Login</h2>
                             </div>
                             <div className="card-body">
-                                <div className="form-group">
-                                    <label htmlFor="username">Username
-                                        <input
-                                            id="username"
-                                            type="text"
-                                            name="username"
-                                            className="form-control"
-                                        />
-                                    </label>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="password">Password
-                                        <input
-                                            id="password"
-                                            type="password"
-                                            name="password"
-                                            className="form-control"
-                                            aria-describedby="passwordDesc"
-                                        />
-                                    </label>
-                                    <small id="passwordDesc" className="form-text text-muted">Passwords are case sensitive</small>
-                                </div>
+                                <fieldset>
+                                    <FormInput
+                                        id="username"
+                                        type="text"
+                                        name="username"
+                                        label="Username"
+                                    />
+                                    <FormInput
+                                        id="password"
+                                        type="password"
+                                        name="password"
+                                        label="Password"
+                                        helperText="Passwords are case sensitive"
+                                    />
+                                </fieldset>
                                 <button type="button" className="btn btn-primary" onClick={goToWishlist}>Login</button>
                             </div>
                         </div>
