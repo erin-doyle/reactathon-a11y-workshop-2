@@ -1,10 +1,21 @@
+:root {
+    --dark-blue: #034f9a;
+}
+
+a {
+    color: var(--dark-blue);
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
 .login {
     margin-top: 5rem;
 }
 
 .helper-text {
     margin-top: -0.25rem;
-    color: #004c90;
+    color: var(--dark-blue);
+    opacity: 0.8;
 }
 
 .nav {
@@ -12,16 +23,29 @@
     margin-bottom: 20px;
 }
 
+.navbar-dark {
+    background-color: var(--dark-blue);
+}
+
+.nav-link {
+    text-decoration: none;
+    opacity: 1;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: var(--dark-blue);
+}
+
+.btn-dark {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
 .notes {
     font-style: italic;
-    color: #13d63f;
+    color: #3951b1;
 }
 
 .modal.show {
     display: inherit;
-}
-
-.btn-dark {
-    background-color: #034f9a;
-    border-color: #034f9a;
 }
