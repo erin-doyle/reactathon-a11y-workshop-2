@@ -79,7 +79,12 @@ class MovieWishlist extends Component {
 
                             <TabList ariaLabel="WishLists by Status" activeTab={selectedStatus} tabList={tabList} />
 
-                            <div id={`${selectedStatus}-panel`} role="tabpanel" aria-labelledby="">
+                            <div
+                                id={`${selectedStatus}-panel`}
+                                role="tabpanel"
+                                aria-labelledby={`${selectedStatus}-tab`}
+                                tabIndex="0"
+                            >
                                 <WishList
                                     movieList={wishlist}
                                     watched={selectedStatus === 'watched'}
