@@ -11,7 +11,7 @@ const TabList = ({ tabList }) => {
     ));
 
     return (
-        <ul className="nav nav-pills nav-justified">
+        <ul className="nav nav-tabs nav-justified">
             {tabItems}
         </ul>
     );
