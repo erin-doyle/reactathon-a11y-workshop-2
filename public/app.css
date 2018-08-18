@@ -4,6 +4,7 @@
 
 .helper-text {
     margin-top: -0.25rem;
+    color: #004c90;
 }
 
 .nav {
@@ -18,4 +19,9 @@
 
 .modal.show {
     display: inherit;
+}
+
+.btn-dark {
+    background-color: #034f9a;
+    border-color: #034f9a;
 }

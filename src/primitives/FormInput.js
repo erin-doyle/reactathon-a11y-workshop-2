@@ -17,7 +17,7 @@ const FormInput = ({ id, type, name, label, helperText }) => {
                 />
             </label>
             { helperText
-                ? <small id={helperId} className="form-text text-muted helper-text">{helperText}</small>
+                ? <small id={helperId} className="form-text helper-text">{helperText}</small>
                 : null
             }
         </div>

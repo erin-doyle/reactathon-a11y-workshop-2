@@ -14,7 +14,7 @@ const Login = ({ history }) => {
                </header>
                <main>
                    <form>
-                       <div className="card bg-primary">
+                       <div className="card bg-light">
                             <div className="card-header">
                                 <h2>Login</h2>
                             </div>
@@ -34,7 +34,7 @@ const Login = ({ history }) => {
                                         helperText="Passwords are case sensitive"
                                     />
                                 </fieldset>
-                                <button type="button" className="btn btn-primary" onClick={goToWishlist}>Login</button>
+                                <button type="button" className="btn btn-dark" onClick={goToWishlist}>Login</button>
                             </div>
                         </div>
                    </form>
