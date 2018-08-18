@@ -49,6 +49,11 @@ a {
     border-color: var(--dark-blue);
 }
 
+.no-movies-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
 .notes {
     font-style: italic;
     color: #3951b1;

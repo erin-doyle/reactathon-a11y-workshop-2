@@ -32,9 +32,9 @@ const MovieBrowser = ({
             <Header title="Browse Movies" buttonText="< Back" buttonLabel="Back to Wish List" handleButtonClick={goToWishlist} />
 
             <main>
-                <TabList tabList={tabList} />
+                <TabList ariaLabel="Movie Genres" tabList={tabList} />
 
-                <div>
+                <div role="tabpanel" aria-labelledby="">
                     <BrowseList
                         movieList={moviesInGenre}
                         wishlist={wishlist}

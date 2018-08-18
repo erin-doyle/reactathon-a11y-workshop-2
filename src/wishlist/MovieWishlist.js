@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -70,26 +70,32 @@ class MovieWishlist extends Component {
                 <Header title="Movie Wishlist" buttonText="+" buttonLabel="Add a Movie" handleButtonClick={goToBrowse} />
 
                 <main>
-                    <TabList tabList={tabList} />
-
                     {Object.keys(wishlist).length
-                        ? <div>
-                            <WishList
-                                movieList={wishlist}
-                                watched={match.params.status === 'watched'}
-                                movieActions={movieActions}
-                            />
-                        </div>
-                        : <div aria-labelledby="noMoviesText addLink">
+                        // Show WishList
+                        ? <Fragment>
+
+                            <TabList ariaLabel="WishLists by Status" tabList={tabList} />
+
+                            <div role="tabpanel" aria-labelledby="">
+                                <WishList
+                                    movieList={wishlist}
+                                    watched={match.params.status === 'watched'}
+                                    movieActions={movieActions}
+                                />
+                            </div>
+
+                            { showEditor
+                                ? <MovieEditor movie={movieInEditing} updateMovie={this.handleUpdateMovie} />
+                                : null
+                            }
+                        </Fragment>
+
+                        // No movies yet in the WishList
+                        : <div aria-labelledby="noMoviesText addLink" className="no-movies-container">
                             <span id="noMoviesText">
                                 No Movies in your Wish List! <Link id="addLink" to="/browse">Add some Movies!</Link>
                             </span>
                         </div>
-                    }
-
-                    { showEditor
-                        ? <MovieEditor movie={movieInEditing} updateMovie={this.handleUpdateMovie} />
-                        : null
                     }
                 </main>
             </div>
