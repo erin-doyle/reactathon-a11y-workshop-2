@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieToolbarButton from '../primitives/MovieToolbarButton';
+import MovieToolbar from '../primitives/MovieToolbar';
 
 
 const getMovieActions = (showEditor, setAsWatched, setAsUnwatched, handleRemove) =>
@@ -9,12 +9,14 @@ const getMovieActions = (showEditor, setAsWatched, setAsUnwatched, handleRemove)
         const editClickHandler = () => showEditor(movieId);
         const removeClickHandler = () => handleRemove(movieId);
 
+        const movieButtonList = [
+            { title: watchButtonText, action: watchClickHandler },
+            { title: 'Edit', action: editClickHandler },
+            { title: 'Remove', action: removeClickHandler }
+        ];
+
         return (
-            <div className="btn-group">
-                <MovieToolbarButton movieTitle={movieTitle} buttonText={watchButtonText} clickHandler={watchClickHandler} />
-                <MovieToolbarButton movieTitle={movieTitle} buttonText="Edit" clickHandler={editClickHandler} />
-                <MovieToolbarButton movieTitle={movieTitle} buttonText="Remove" clickHandler={removeClickHandler} />
-            </div>
+            <MovieToolbar ariaLabel={`${movieTitle} Actions`} movieTitle={movieTitle} buttonList={movieButtonList}/>
         );
     };
 
