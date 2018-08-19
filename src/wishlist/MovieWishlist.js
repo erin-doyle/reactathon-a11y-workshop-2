@@ -92,10 +92,11 @@ class MovieWishlist extends Component {
                                 />
                             </div>
 
-                            { showEditor
-                                ? <MovieEditor movie={movieInEditing} updateMovie={this.handleUpdateMovie} />
-                                : null
-                            }
+                            <MovieEditor
+                                movie={movieInEditing}
+                                updateMovie={this.handleUpdateMovie}
+                                isOpen={showEditor}
+                            />
                         </Fragment>
 
                         // No movies yet in the WishList
