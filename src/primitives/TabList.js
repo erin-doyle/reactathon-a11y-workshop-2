@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
@@ -165,9 +165,12 @@ class TabList extends Component {
         });
 
         return (
-            <div className="nav nav-tabs nav-justified" role="tablist" aria-label={ariaLabel} tabIndex="0">
-                {tabItems}
-            </div>
+            <Fragment>
+                <legend id="tablist-title" className="screen-reader-text">{ariaLabel}</legend>
+                <div className="nav nav-tabs nav-justified" role="tablist" aria-describedby="tablist-title" tabIndex="0">
+                    {tabItems}
+                </div>
+            </Fragment>
         );
     }
 }

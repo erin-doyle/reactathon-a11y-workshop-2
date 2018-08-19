@@ -36,7 +36,7 @@ const MovieBrowser = ({
             <Header title="Browse Movies" buttonText="< Back" buttonLabel="Back to Wish List" handleButtonClick={goToWishlist} />
 
             <main>
-                <TabList ariaLabel="Movie Genres" tabList={tabList} />
+                <TabList ariaLabel="Select a Movie Genre to Browse" tabList={tabList} />
 
                 <div
                     id={`${selectedGenre}-panel`}

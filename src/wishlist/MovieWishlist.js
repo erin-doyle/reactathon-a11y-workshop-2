@@ -77,7 +77,7 @@ class MovieWishlist extends Component {
                         // Show WishList
                         ? <Fragment>
 
-                            <TabList ariaLabel="WishLists by Status" tabList={tabList} />
+                            <TabList ariaLabel="Select a WishList by Status" tabList={tabList} />
 
                             <div
                                 id={`${selectedStatus}-panel`}
