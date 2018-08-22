@@ -58,19 +58,20 @@ class MovieEditor extends Component {
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 id="modal-title" className="modal-title">Edit Movie</h5>
-                            <button type="button" className="close" onClick={this.handleClose}>
+                            <h3 id="modal-title" className="modal-title">Edit Movie</h3>
+                            <button type="button" className="close" aria-label="Close" onClick={this.handleClose}>
                                 <span>&times;</span>
                             </button>
                         </div>
                         <div className="modal-body">
                             <div className="form-group">
-                                <label>Notes:</label>
-                                <textarea className="form-control" value={notes} onChange={this.handleChangeNotes} />
+                                <label htmlFor="notes">Notes:
+                                    <textarea id="notes" className="form-control" value={notes} onChange={this.handleChangeNotes} />
+                                </label>
                             </div>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-primary" onClick={this.handleSave}>Save</button>
+                            <button type="button" className="btn btn-dark" onClick={this.handleSave}>Save</button>
                         </div>
                     </div>
                 </div>
