@@ -19,9 +19,22 @@ class MovieWishlist extends Component {
             movieIdInEdit: null
         };
 
+        this.addSomeMoviesLink = null;
+
+        this.setAddSomeMoviesLinkRef = this.setAddSomeMoviesLinkRef.bind(this);
         this.handleShowEditor = this.handleShowEditor.bind(this);
         this.handleHideEditor = this.handleHideEditor.bind(this);
         this.handleUpdateMovie = this.handleUpdateMovie.bind(this);
+    }
+
+    componentDidMount() {
+        if (this.addSomeMoviesLink) {
+            this.addSomeMoviesLink.focus();
+        }
+    }
+
+    setAddSomeMoviesLinkRef(element) {
+        this.addSomeMoviesLink = element;
     }
 
     handleShowEditor(movieId) {
@@ -109,7 +122,9 @@ class MovieWishlist extends Component {
                         // No movies yet in the WishList
                         : <div aria-labelledby="noMoviesText addLink" className="no-movies-container">
                             <span id="noMoviesText">
-                                No Movies in your Wish List! <Link id="addLink" to="/browse">Add some Movies!</Link>
+                                No Movies in your Wish List! <Link id="addLink" to="/browse"
+                                        aria-label="Add some movies to your wishlist now!"
+                                        innerRef={this.setAddSomeMoviesLinkRef}>Add some Movies!</Link>
                             </span>
                         </div>
                     }

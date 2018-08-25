@@ -27,9 +27,9 @@ class TabList extends Component {
     }
 
     componentDidUpdate() {
-        if (!this.selectedTabRef) return;
-
-        this.selectedTabRef.focus();
+        if (this.selectedTabRef) {
+            this.selectedTabRef.focus();
+        }
     }
 
     setSelectedTabRef(element) {
