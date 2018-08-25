@@ -43,7 +43,7 @@ const MovieBrowser = ({
             />
 
             <main>
-                <TabList ariaLabel="Select a Movie Genre to Browse" tabList={tabList} />
+                <TabList ariaLabel="Select a Movie Genre to Browse" tabList={tabList} doFocus />
 
                 <div
                     id={`${selectedGenre}-panel`}

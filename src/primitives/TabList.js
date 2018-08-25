@@ -14,8 +14,10 @@ class TabList extends Component {
             selectedTab: tabList.find((tab) => tab.linkTo === match.url) || tabList[0]
         };
 
+        this.tabList = null;
         this.selectedTabRef = null;
 
+        this.setTabListRef = this.setTabListRef.bind(this);
         this.setSelectedTabRef = this.setSelectedTabRef.bind(this);
         this.selectTab = this.selectTab.bind(this);
         this.gotoFirstTab = this.gotoFirstTab.bind(this);
@@ -26,10 +28,22 @@ class TabList extends Component {
         this.handleKeydown = this.handleKeydown.bind(this);
     }
 
+    componentDidMount() {
+        const { doFocus } = this.props;
+
+        if (doFocus && this.tabList) {
+            this.tabList.focus();
+        }
+    }
+
     componentDidUpdate() {
         if (this.selectedTabRef) {
             this.selectedTabRef.focus();
         }
+    }
+
+    setTabListRef(element) {
+        this.tabList = element;
     }
 
     setSelectedTabRef(element) {
@@ -167,13 +181,23 @@ class TabList extends Component {
         return (
             <Fragment>
                 <legend id="tablist-title" className="screen-reader-text">{ariaLabel}</legend>
-                <div className="nav nav-tabs nav-justified" role="tablist" aria-describedby="tablist-title" tabIndex="0">
+                <div
+                    className="nav nav-tabs nav-justified"
+                    role="tablist"
+                    aria-describedby="tablist-title"
+                    tabIndex="0"
+                    ref={this.setTabListRef}
+                >
                     {tabItems}
                 </div>
             </Fragment>
         );
     }
 }
+
+TabList.defaultProps = {
+    doFocus: false
+};
 
 TabList.propTypes = {
     ariaLabel: PropTypes.string.isRequired,
@@ -182,6 +206,7 @@ TabList.propTypes = {
         linkTo: PropTypes.string,
         title: PropTypes.string
     })).isRequired,
+    doFocus: PropTypes.bool,
     // supplied by withRouter
     match: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
