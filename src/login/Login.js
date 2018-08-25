@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import FormInput from '../primitives/FormInput';
+import Header from '../primitives/Header';
 
 
 const Login = ({ history }) => {
@@ -9,9 +11,9 @@ const Login = ({ history }) => {
     return (
         <div className="login row align-items-center">
            <div className="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5">
-               <header>
-                   <h1>Movie Wishlist</h1>
-               </header>
+
+               <Header title="Movie WishList" />
+
                <main>
                    <form>
                        <div className="card bg-light">

@@ -2,34 +2,46 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const Header = ({ title, buttonText, buttonLabel, handleButtonClick }) => (
-    <header>
-        <nav className="navbar navbar-dark">
-            <span className="navbar-brand">
-                <h1>{title}</h1>
-            </span>
+const Header = ({ title, buttonOptions }) => {
+    const getNavButton = () => {
+        if (!buttonOptions) return null;
+
+        const { text, label, handleClick } = buttonOptions;
+
+        return (
             <button
                 className="btn btn btn-outline-light"
-                aria-label={buttonLabel}
-                onClick={handleButtonClick}
+                aria-label={label}
+                onClick={handleClick}
             >
-                {buttonText}
+                {text}
             </button>
-        </nav>
-    </header>
-);
+        );
+    };
+
+    return (
+        <header>
+            <nav className="navbar navbar-dark">
+                <span className="navbar-brand">
+                    <h1>{title}</h1>
+                </span>
+                { getNavButton() }
+            </nav>
+        </header>
+    );
+};
 
 Header.defaultProps = {
-    buttonText: '',
-    buttonLabel: null,
-    handleButtonClick: () => {}
+    buttonOptions: null
 };
 
 Header.propTypes = {
     title: PropTypes.string.isRequired,
-    buttonText: PropTypes.string,
-    buttonLabel: PropTypes.string,
-    handleButtonClick: PropTypes.func
+    buttonOptions: PropTypes.shape({
+        text: PropTypes.string,
+        label: PropTypes.string,
+        handleClick: PropTypes.func
+    })
 };
 
 

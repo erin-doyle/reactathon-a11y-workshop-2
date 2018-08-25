@@ -33,7 +33,14 @@ const MovieBrowser = ({
 
     return (
         <div>
-            <Header title="Browse Movies" buttonText="< Back" buttonLabel="Back to Wish List" handleButtonClick={goToWishlist} />
+            <Header
+                title="Browse Movies"
+                buttonOptions={{
+                    text: "< Back",
+                    label: "Back to Wish List",
+                    handleClick: goToWishlist
+                }}
+            />
 
             <main>
                 <TabList ariaLabel="Select a Movie Genre to Browse" tabList={tabList} />
