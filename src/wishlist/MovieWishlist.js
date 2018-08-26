@@ -82,7 +82,7 @@ class MovieWishlist extends Component {
         const movieInEditing = movieIdInEdit ? wishlist[movieIdInEdit] : {};
 
         return (
-            <div>
+            <Fragment>
                 <Header
                     title="Movie Wishlist"
                     buttonOptions={{
@@ -97,7 +97,7 @@ class MovieWishlist extends Component {
                         // Show WishList
                         ? <Fragment>
 
-                            <TabList ariaLabel="Select a WishList by Status" tabList={tabList} />
+                            <TabList ariaLabel="Select a WishList by Status" tabList={tabList} doFocus />
 
                             <div
                                 id={`${selectedStatus}-panel`}
@@ -129,7 +129,7 @@ class MovieWishlist extends Component {
                         </div>
                     }
                 </main>
-            </div>
+            </Fragment>
         );
     }
 }

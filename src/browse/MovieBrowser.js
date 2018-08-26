@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import movies from '../movies';
@@ -32,7 +32,7 @@ const MovieBrowser = ({
     const moviesInGenre = movies[selectedGenre];
 
     return (
-        <div>
+        <Fragment>
             <Header
                 title="Browse Movies"
                 buttonOptions={{
@@ -58,7 +58,7 @@ const MovieBrowser = ({
                     />
                 </div>
             </main>
-        </div>
+        </Fragment>
     );
 };
 
