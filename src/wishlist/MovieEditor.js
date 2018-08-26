@@ -53,7 +53,7 @@ class MovieEditor extends Component {
                     labelledby: "modal-title"
                 }}
                 shouldFocusAfterRender={true}
-                shouldCloseOnOverlayClick={true}
+                shouldReturnFocusAfterClose={false} // override default behavior which returns focus to wrong element
             >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">

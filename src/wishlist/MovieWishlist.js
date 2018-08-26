@@ -16,7 +16,8 @@ class MovieWishlist extends Component {
 
         this.state = {
             showEditor: false,
-            movieIdInEdit: null
+            movieIdInEdit: null,
+            onEditorClose: null
         };
 
         this.addSomeMoviesLink = null;
@@ -33,14 +34,26 @@ class MovieWishlist extends Component {
         }
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        const { showEditor, onEditorClose } = this.state;
+
+        // If the Movie Editor was just closed set the focus back to the Edit button that opened it
+        if (prevState.showEditor === true && showEditor === false) {
+            if (onEditorClose) {
+                onEditorClose();
+            }
+        }
+    }
+
     setAddSomeMoviesLinkRef(element) {
         this.addSomeMoviesLink = element;
     }
 
-    handleShowEditor(movieId) {
+    handleShowEditor(movieId, editorCloseCallback) {
         this.setState({
             showEditor: true,
-            movieIdInEdit: movieId
+            movieIdInEdit: movieId,
+            onEditorClose: editorCloseCallback
         });
     }
 
@@ -113,6 +126,7 @@ class MovieWishlist extends Component {
                             </div>
 
                             <MovieEditor
+                                key={movieInEditing.name}
                                 movie={movieInEditing}
                                 updateMovie={this.handleUpdateMovie}
                                 isOpen={showEditor}

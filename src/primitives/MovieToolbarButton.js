@@ -15,6 +15,7 @@ const MovieToolbarButton = ({
 
     return (
         <button
+            id={`${buttonText}-${movieTitle}-btn`}
             className="btn btn-secondary"
             aria-label={ariaLabel}
             onClick={clickHandler}
