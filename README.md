@@ -2,7 +2,10 @@
 Instructor: Erin Doyle  
   
 Thank you for signing up for the workshop on Building Accessible Web Apps with React! 
-Please read through this entire document and follow the steps to get set up. Please complete each step *before* the workshop starts to ensure that you are ready to go from the start!  
+Please read through this entire document and follow the steps to get set up. Please complete each step *before* the workshop starts to ensure that you are ready to go from the start! 
+
+## Slides
+The slides from the workshop are available [here](https://docs.google.com/presentation/d/1Hys8ianCVUsLBZS5dt4sdIKrBq6royAQ0lm_DIForVI/edit?usp=sharing).
 
 ## Contents
 1. [Set up the Dev Environment](#1.-dev-env-setup)
